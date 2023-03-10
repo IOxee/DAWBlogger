@@ -1,0 +1,261 @@
+CRITICAL - 2023-02-17 16:47:51 --> view(): Argument #2 ($data) must be of type array, string given, called in C:\Users\ByBlackDeath\Documents\Caparrella_DAW2\MP07\Codeigniter\DAWBlogger\app\Controllers\NewsController.php on line 24
+in SYSTEMPATH\Common.php on line 1163.
+ 1 APPPATH\Controllers\NewsController.php(24): view('templates/header', '<table border="0" cellpadding="4" cellspacing="0">
+<thead>
+<tr>
+<th>1</th><th>Susanna Griso no ha utilizado Photoshop: su retrato para desear felices fiestas se ha creado con inteligencia artificial</th><th>La inteligencia artificial está arrasando entre la sociedad. Muchos la usan en su día a día para realizar sus labores cotidianas. Una de sus funciones que más llama la atención es la manera en la que logra hacer retratos animados que parecen fotografías reales. test</th><th>susanna-griso-no-ha-utilizado-photoshop-su-retrato-para-desear-felices-fiestas-se-ha-creado-con-inteligencia-artificial</th><th>2023-01-31 16:47:00</th><th>2023-01-31 17:34:15</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td><td>Eficiencia de Mascaras</td><td>FFP1: Es el nivel de protección más bajo.\\r\\n      Estas máscaras no son eficientes contra gases venenosos ni fibrogénicas de po</td><td>eficiencia-de-mascaras</td><td>2023-01-31 15:13:34</td><td>2023-01-31 15:13:34</td></tr>
+</tbody>
+</table>')
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NewsController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewsController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-02-17 16:48:13 --> syntax error, unexpected token "return"
+in APPPATH\Controllers\NewsController.php on line 25.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(289): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\NewsController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(267): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\NewsController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\NewsController')
+ 4 SYSTEMPATH\CodeIgniter.php(892): class_exists('\\App\\Controllers\\NewsController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(486): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-02-17 16:52:26 --> Call to undefined method App\Models\NewsModel::getAllData
+in SYSTEMPATH\Model.php on line 841.
+ 1 APPPATH\Controllers\NewsController.php(21): CodeIgniter\Model->__call('getAllData', [])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NewsController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewsController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-02-17 16:52:27 --> Call to undefined method App\Models\NewsModel::getAllData
+in SYSTEMPATH\Model.php on line 841.
+ 1 APPPATH\Controllers\NewsController.php(21): CodeIgniter\Model->__call('getAllData', [])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NewsController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewsController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-02-17 16:52:59 --> Undefined property: CodeIgniter\View\View::$table
+in APPPATH\Views\news\index.php on line 12.
+ 1 APPPATH\Views\news\index.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$table', 'APPPATH\\Views\\news\\index.php', 12)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\news\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('news/index', [], true)
+ 5 APPPATH\Controllers\NewsController.php(23): view('news/index')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NewsController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewsController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-02-17 16:53:00 --> Undefined property: CodeIgniter\View\View::$table
+in APPPATH\Views\news\index.php on line 12.
+ 1 APPPATH\Views\news\index.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$table', 'APPPATH\\Views\\news\\index.php', 12)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\news\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('news/index', [], true)
+ 5 APPPATH\Controllers\NewsController.php(23): view('news/index')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NewsController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewsController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-02-17 16:53:01 --> Undefined property: CodeIgniter\View\View::$table
+in APPPATH\Views\news\index.php on line 12.
+ 1 APPPATH\Views\news\index.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$table', 'APPPATH\\Views\\news\\index.php', 12)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\news\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('news/index', [], true)
+ 5 APPPATH\Controllers\NewsController.php(23): view('news/index')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NewsController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewsController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-02-17 16:53:06 --> Undefined property: CodeIgniter\View\View::$table
+in APPPATH\Views\news\index.php on line 12.
+ 1 APPPATH\Views\news\index.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$table', 'APPPATH\\Views\\news\\index.php', 12)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\news\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('news/index', [], true)
+ 5 APPPATH\Controllers\NewsController.php(23): view('news/index')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NewsController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewsController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-02-17 16:53:07 --> Undefined property: CodeIgniter\View\View::$table
+in APPPATH\Views\news\index.php on line 12.
+ 1 APPPATH\Views\news\index.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$table', 'APPPATH\\Views\\news\\index.php', 12)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\news\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('news/index', [], true)
+ 5 APPPATH\Controllers\NewsController.php(23): view('news/index')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NewsController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewsController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-02-17 16:53:08 --> Undefined property: CodeIgniter\View\View::$table
+in APPPATH\Views\news\index.php on line 12.
+ 1 APPPATH\Views\news\index.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$table', 'APPPATH\\Views\\news\\index.php', 12)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\news\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('news/index', [], true)
+ 5 APPPATH\Controllers\NewsController.php(23): view('news/index')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NewsController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewsController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-02-17 16:53:17 --> Undefined property: CodeIgniter\View\View::$table
+in APPPATH\Views\news\index.php on line 12.
+ 1 APPPATH\Views\news\index.php(12): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$table', 'APPPATH\\Views\\news\\index.php', 12)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\news\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('news/index', [], true)
+ 5 APPPATH\Controllers\NewsController.php(23): view('news/index')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NewsController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewsController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-02-17 16:55:07 --> syntax error, unexpected token "<"
+in APPPATH\Views\news\index.php on line 5.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('news/index', [], true)
+ 3 APPPATH\Controllers\NewsController.php(23): view('news/index')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NewsController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewsController))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-02-17 16:55:08 --> Undefined variable $pager
+in APPPATH\Views\news\index.php on line 3.
+ 1 APPPATH\Views\news\index.php(3): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pager', 'APPPATH\\Views\\news\\index.php', 3)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\news\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('news/index', [], true)
+ 5 APPPATH\Controllers\NewsController.php(23): view('news/index')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NewsController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewsController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-02-17 16:55:09 --> Undefined variable $pager
+in APPPATH\Views\news\index.php on line 3.
+ 1 APPPATH\Views\news\index.php(3): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pager', 'APPPATH\\Views\\news\\index.php', 3)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\news\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('news/index', [], true)
+ 5 APPPATH\Controllers\NewsController.php(23): view('news/index')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NewsController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewsController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-02-17 17:01:37 --> Call to undefined method App\Models\NewsModel::getAllPaged
+in SYSTEMPATH\Model.php on line 841.
+ 1 APPPATH\Controllers\NewsController.php(24): CodeIgniter\Model->__call('getAllPaged', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NewsController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewsController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-02-17 17:01:39 --> Call to undefined method App\Models\NewsModel::getAllPaged
+in SYSTEMPATH\Model.php on line 841.
+ 1 APPPATH\Controllers\NewsController.php(24): CodeIgniter\Model->__call('getAllPaged', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NewsController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewsController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-02-17 17:02:27 --> Undefined array key "published_at"
+in APPPATH\Views\news\index.php on line 6.
+ 1 APPPATH\Views\news\index.php(6): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "published_at"', 'APPPATH\\Views\\news\\index.php', 6)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\news\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('news/index', [], true)
+ 5 APPPATH\Controllers\NewsController.php(47): view('news/index')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NewsController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewsController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-02-17 17:02:39 --> Undefined constant "App\Models\published_at"
+in APPPATH\Models\NewsModel.php on line 58.
+ 1 APPPATH\Controllers\NewsController.php(24): App\Models\NewsModel->getAllPaged(5)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NewsController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewsController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-02-17 17:02:40 --> Undefined array key "slug"
+in APPPATH\Views\news\index.php on line 27.
+ 1 APPPATH\Views\news\index.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "slug"', 'APPPATH\\Views\\news\\index.php', 27)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\news\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('news/index', [], true)
+ 5 APPPATH\Controllers\NewsController.php(47): view('news/index')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NewsController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewsController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-02-17 17:02:41 --> Undefined array key "slug"
+in APPPATH\Views\news\index.php on line 27.
+ 1 APPPATH\Views\news\index.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "slug"', 'APPPATH\\Views\\news\\index.php', 27)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\news\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('news/index', [], true)
+ 5 APPPATH\Controllers\NewsController.php(47): view('news/index')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NewsController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewsController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-02-17 17:02:47 --> Undefined array key "slug"
+in APPPATH\Views\news\index.php on line 27.
+ 1 APPPATH\Views\news\index.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "slug"', 'APPPATH\\Views\\news\\index.php', 27)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\news\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('news/index', [], true)
+ 5 APPPATH\Controllers\NewsController.php(47): view('news/index')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NewsController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewsController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-02-17 17:08:37 --> Undefined array key "published_at"
+in APPPATH\Views\news\index.php on line 16.
+ 1 APPPATH\Views\news\index.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "published_at"', 'APPPATH\\Views\\news\\index.php', 16)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\news\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1177): CodeIgniter\View\View->render('news/index', [], true)
+ 5 APPPATH\Controllers\NewsController.php(47): view('news/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NewsController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewsController))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-02-17 17:23:58 --> Too few arguments to function App\Models\NewsModel::getAllPaged(), 1 passed in C:\Users\ByBlackDeath\Documents\Caparrella_DAW2\MP07\Codeigniter\DAWBlogger\app\Controllers\NewsController.php on line 26 and exactly 2 expected
+in APPPATH\Models\NewsModel.php on line 57.
+ 1 APPPATH\Controllers\NewsController.php(26): App\Models\NewsModel->getAllPaged(5)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NewsController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewsController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-02-17 17:24:00 --> Too few arguments to function App\Models\NewsModel::getAllPaged(), 1 passed in C:\Users\ByBlackDeath\Documents\Caparrella_DAW2\MP07\Codeigniter\DAWBlogger\app\Controllers\NewsController.php on line 26 and exactly 2 expected
+in APPPATH\Models\NewsModel.php on line 57.
+ 1 APPPATH\Controllers\NewsController.php(26): App\Models\NewsModel->getAllPaged(5)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\NewsController->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NewsController))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
