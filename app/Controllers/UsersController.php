@@ -48,12 +48,11 @@ class UsersController extends BaseController
             $user = $model->getUserByMailOrUsername($email);
             if ($user) {
                 if (password_verify($password, $user['password'])) {
-                    $role = $user['name'] == 'admin' ? 'admin' : 'user';
                     $sessionData = [
                         'id' => $user['id'],
                         'name' => $user['name'],
                         'email' => $user['email'],
-                        'role' => $role,
+                        'role' => $user['role'],
                         'loggedIn' => true,
                     ];
 
@@ -134,6 +133,7 @@ class UsersController extends BaseController
             $data = [
                 'name' => $username,
                 'email' => $email,
+                'role' => 'user',
                 'password' => password_hash($password, PASSWORD_DEFAULT),
             ];
 
