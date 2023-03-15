@@ -1,7 +1,9 @@
 <?php
 
 namespace Config;
+use App\Controllers\AdminController;
 use App\Controllers\NewsController;
+use App\Controllers\UsersController;
 
 // Create a new instance of our RouteCollection class.
 $routes = Services::routes();
@@ -31,10 +33,18 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 //$routes->get('/', 'Home::index');
-$routes->get('/(:segment)/(:segment)', [NewsController::class, 'index/$1/$2']);
-$routes->get('/', [NewsController::class, 'index']);
+$routes->get('logout', [UsersController::class, 'logout']);
+$routes->get('login', [UsersController::class, 'login']);
+$routes->post('login', [UsersController::class, 'login_post']);
 
+$routes->get('register', [UsersController::class, 'registerView']);
+$routes->post('register', [UsersController::class, 'register']);
 
+$routes->get('panel', [UsersController::class, 'private_dashboard'], ['filter'=>'validateUsers']);
+$routes->get('admin', [AdminController::class, 'index'], ['filter'=>'validateUsers']);
+
+$routes->post('admin/cgroup', [AdminController::class, 'createRole']);
+$routes->post('admin/setGroup', [AdminController::class, 'setRole']);
 
 $routes->post('news/create', [NewsController::class, 'create']);
 $routes->get('news/create', [NewsController::class, 'create']);
@@ -44,13 +54,15 @@ $routes->get('news/edit/(:num)', [NewsController::class, 'get/$1']);
 
 $routes->get('news/delete/(:num)', [NewsController::class, 'delete/$1']);
 
+$routes->post('contact', [NewsController::class, 'contact']);
+$routes->get('contact', [NewsController::class, 'contactView']);
 
 
 $routes->get('news/(:segment)', [NewsController::class, 'view']);
 $routes->get('news', [NewsController::class, 'index']);
-$routes->get('pages', [Pages::class, 'index']);
-$routes->get('(:segment)', [Pages::class, 'view']);
 
+$routes->get('/(:segment)/(:segment)', [NewsController::class, 'index/$1/$2']);
+$routes->get('/', [NewsController::class, 'index']);
 
 
 /*

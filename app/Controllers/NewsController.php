@@ -9,6 +9,8 @@ use CodeIgniter\Exceptions\PageNotFoundException;
 use App\Models\NewsModel;
 
 
+
+
 class NewsController extends BaseController
 {
     public function index($sort_by = null, $sort_order = 'desc')
@@ -33,7 +35,7 @@ class NewsController extends BaseController
             $activePage = $searchData['page'] ?? 1;
 
             if ($search == "") {
-                $paginateData = $model->getAllPaged(5, $sort_by, $sort_order);
+                $paginateData = $model->getAldwlPaged(5, $sort_by, $sort_order);
             } else {
                 $paginateData = $model->getByTitleOrText($search, $sort_by, $sort_order)->paginate(2);
             }
@@ -77,12 +79,12 @@ class NewsController extends BaseController
             . view('templates/footer');
     }
 
-    public function view($slug = null) {
+    public function view($id) {
         $model = model(NewsModel::class);
-        $data['news'] = $model->getNews($slug);
+        $data['news'] = $model->getNewsByID($id);
 
         if (empty($data['news'])) {
-            throw new PageNotFoundException('Cannot find the news item: '. $slug);
+            throw new PageNotFoundException('Cannot find the news item: '. $id);
         }
 
         $data['title'] = $data['news']['title'];
@@ -228,4 +230,111 @@ class NewsController extends BaseController
 
     }
     
+    public function contactView()
+    {
+        $config = [
+            "textColor"=>'#000000',
+            "backColor"=>'#ffffff',
+            "noiceColor"=>'#162453',
+            "imgWidth"=>180,
+            "imgHeight"=>40,
+            "noiceLines"=>40,
+            "noiceDots"=>20,
+            "length" => 6,
+            "expiration"=>5*MINUTE
+        ];
+        $timage = new \App\Libraries\Text2Image($config);
+        
+        $data = [
+            'captcha' => $timage->captcha()->html(),
+            'captchaText' => $timage->textToImage()->html(),
+            'text' => $timage->text
+        ];
+
+        session()->set('captcha_text', $timage->text);
+
+        return view('templates/header')
+            . view('news/contact', $data)
+            . view('templates/footer');
+    }
+
+    public function contact()
+    {
+        $post = $this->request->getPost([
+            'name',
+            'email',
+            'subject',
+            'message',
+            'captcha'
+        ]);
+        
+        $captchaText = session()->get('captcha_text');
+
+        $validationRules = 
+        [
+            'name' => [
+                'label' => 'Name',
+                'rules' => 'required|min_length[3]|max_length[255]',
+                'errors' => [
+                    'required' => 'El campo {field} es obligatorio',
+                    'min_length' => 'El campo {field} debe tener al menos {param} caracteres',
+                    'max_length' => 'El campo {field} debe tener como máximo {param} caracteres',
+                ],
+            ],
+            'email' => [
+                'label' => 'Email',
+                'rules' => 'required|valid_email',
+                'errors' => [
+                    'required' => 'El campo {field} es obligatorio',
+                    'valid_email' => 'El campo {field} debe ser un email válido',
+                ],
+            ],
+            'subject' => [
+                'label' => 'Subject',
+                'rules' => 'required|min_length[3]|max_length[255]',
+                'errors' => [
+                    'required' => 'El campo {field} es obligatorio',
+                    'min_length' => 'El campo {field} debe tener al menos {param} caracteres',
+                    'max_length' => 'El campo {field} debe tener como máximo {param} caracteres',
+                ],
+            ],
+            'message' => [
+                'label' => 'Message',
+                'rules' => 'required|min_length[10]|max_length[5000]',
+                'errors' => [
+                    'required' => 'El campo {field} es obligatorio',
+                    'min_length' => 'El campo {field} debe tener al menos {param} caracteres',
+                    'max_length' => 'El campo {field} debe tener como máximo {param} caracteres',
+                ],
+            ],
+            'captcha' => [
+                'label' => 'Captcha',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'El campo {field} es obligatorio',
+                    'matches' => 'El campo {field} no coincide con el texto de la imagen',
+                ],
+            ]
+        ];
+
+        if ($this->validateData($post, $validationRules)) {
+            if ($post['captcha'] != $captchaText) {
+                session()->setFlashdata('error', ['captcha' => 'El campo Captcha no coincide con el texto de la imagen']);
+                return redirect()->back()->withInput();
+            } else {
+                $email = \Config\Services::email();
+                $email->setFrom($post['email'], $post['name']);
+                $email->setTo('admin@me.local');
+                $email->setSubject($post['subject']);
+                $email->setMessage($post['message']);
+    
+                return view('templates/header', ['title' => 'Contact'])
+                    . view('news/success')
+                    . view('templates/footer');
+            }
+        } else {
+            session()->setFlashdata('error', $this->validator->getErrors());
+            return redirect()->back()->withInput();
+        }
+    }
 }

@@ -50,6 +50,16 @@ class NewsModel extends Model
         return $this->where(['slug' => $slug])->first();
     }
 
+    public function getNewsByID($id = false)
+    {
+        if ($id === false)
+        {
+            return $this->findAll();
+        }
+
+        return $this->where(['id' => $id])->first();
+    }
+
     public function deleteNews($id) {
         return $this->delete($id);
     }

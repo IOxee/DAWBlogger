@@ -3,8 +3,7 @@
     <form method='get' action="<?= base_url(''); ?>" id="searchForm">
         <div class="input-group mb-3">
             <input type="text" class="form-control" name='q' value='<?= $search ?>' placeholder="Buscar...">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon2"
-            onclick='document.getElementById("searchForm").submit();'>Buscar</button>
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick='document.getElementById("searchForm").submit();'>Buscar</button>
         </div>
     </form>
     <br />

@@ -24,7 +24,7 @@
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<div class="container-fluid">
-				<a class="navbar-brand" href="#">
+				<a class="navbar-brand" href="<?= base_url() ?>">
 					<img src="https://raw.githubusercontent.com/IOxee/DelawareTelegraph/main/app/assets/img/delaware_telegraph_background_white_icon.png" width="428" height="120">
 				</a>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,15 +33,54 @@
 				<div class="collapse navbar-collapse" id="navbarNav">
 					<ul class="navbar-nav">
 						<li>
-							<a class="btn btn-outline-dark mx-2 my-3" type="submit" href="<?= base_url() ?>"><i class="bi bi-newspaper"></i> Publicacions</a>
+							<a class="btn btn-outline-dark mx-2 my-3" type="submit" href="<?= base_url() ?>">
+							<i class="bi bi-newspaper"></i> Publicacions
+						</a>
 						</li>
 						<li>
-							<a class="btn btn-outline-dark mx-2 my-3" href="<?= base_url('news/create') ?>"><i class="bi bi-pen"></i> Crear publicació</a>
+							<a class="btn btn-outline-dark mx-2 my-3" href="<?= base_url('news/create') ?>">
+							<i class="bi bi-pen"></i> Crear publicació
+						</a>
 						</li>
 						<li>
-							<a class="btn btn-outline-dark mx-2 my-3" type="submit"><i class="bi bi-tags"></i> Categories</a>
+							<a class="btn btn-outline-dark mx-2 my-3" type="submit">
+								<i class="bi bi-tags"></i> Categories
+							</a>
+						</li>
+						<li>
+							<a class="btn btn-outline-dark mx-2 my-3" type="submit" href="<?= base_url('contact') ?>">
+								<i class="bi bi-clipboard"></i> Contacte
+							</a>
 						</li>
 					</ul>
         		</div>
+				<div class="float-right">
+					<ul class="navbar-nav">
+						<?php if (session()->get('loggedIn')): ?>
+							<li>
+								<a class="btn btn-outline-dark mx-2 my-3" type="submit" href="<?= base_url('panel') ?>">
+									<i class="bi bi-person"></i>
+									<?= strtoupper(substr(session()->get('name'), 0, 1)) . substr(session()->get('name'), 1)?>
+								</a>
+							</li>
+							<li>
+								<a class="btn btn-outline-dark mx-2 my-3" type="submit" href="<?= base_url('logout') ?>">
+									<i class="bi bi-box-arrow-right"></i> Tancar sessió
+								</a>
+							</li>
+						<?php else: ?>
+							<li>
+								<a class="btn btn-outline-dark mx-2 my-3" type="submit" href="<?= base_url('login') ?>">
+									<i class="bi bi-box-arrow-in-right"></i> Iniciar sessió
+								</a>
+							</li>
+							<li>
+								<a class="btn btn-outline-dark mx-2 my-3" type="submit" href="<?= base_url('register') ?>">
+									<i class="bi bi-person-plus"></i> Registrar-se
+								</a>
+							</li>
+						<?php endif; ?>
+					</ul>
+				</div>
             </div>
         </nav>

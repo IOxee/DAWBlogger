@@ -4,8 +4,8 @@
 
 
 
-        <footer class="footer mt-5 py-3 bg-light">
-            <div class="container" >
+        <footer class="footer mt-5 py-3 bg-light fixed-bottom">
+            <div class="container">
                 <a class="text-muted" href="https://github.com/ioxee" target="_blank">© 2023 Isidre Rosell</a>
             </div>
         </footer>
